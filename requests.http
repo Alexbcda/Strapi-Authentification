@@ -1,0 +1,158 @@
+
+POST http://localhost:1337/api/auth/local/register
+Content-Type: application/json
+
+{
+  "username": "auth",
+  "email": "authstrapi@gmail.com",
+  "password": "56ryRHdetr-65468"
+}
+###
+POST http://localhost:1337/api/auth/local/register
+Content-Type: application/json
+
+{
+  "username": "auth",
+  "email": "authstrapi@gmail.com",
+  "password": "56ryRHdetr-65468"
+}
+###
+//se connecter
+POST http://localhost:1337/api/auth/local
+Content-Type: application/json
+
+{
+  "identifier": "authstrapi@gmail.com",
+  "password": "56ryRHdetr-65468"
+}
+
+###
+//se deconnecter
+POST http://localhost:1337/api/auth/logout
+
+
+###
+//recuperer les données de l'utilisateur connecté
+GET http://localhost:1337/api/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzAxNzc0MjkxLCJleHAiOjE3MDQzNjYyOTF9.z-RO-QDdkXuEzW4sWHBeS-Qv9S2w53n_hw3IYbtNwtc
+
+###
+//modifier le mot de passe de l'utilisateur connecté
+PUT http://localhost:1337/api/users/me
+Content-Type: application/json
+
+{
+  "password": "nouveau_mot_de_passe"
+}
+
+//cREER UN JEU GRATUIT
+###
+POST http://localhost:1337/api/free-games
+Content-Type: application/json
+
+{
+    "data": {
+        "Nom": "Test nom",
+        "Description": "Test description",
+        "Image": ""
+       
+    }
+}
+
+//RECUPERER TOUS LES JEUX GRATUITS
+###
+GET http://localhost:1337/API/free-games
+
+
+
+//RECUPERER UN JEU GRATUIT
+###
+GET http://localhost:1337/API/free-games/2
+
+
+//mODIFIER UN JEU GRATUIT
+###
+PUT http://localhost:1337/API/free-games/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzAxNzc0MjkxLCJleHAiOjE3MDQzNjYyOTF9.z-RO-QDdkXuEzW4sWHBeS-Qv9S2w53n_hw3IYbtNwtc
+
+{
+    "data": {
+        "Nom": "Test nom",
+        "Description": "Test description",
+        "Image": ""
+        
+
+    }
+}
+
+
+//SUPPRIMER UN JEU GRATUIT
+###
+DELETE http://localhost:1337/API/free-games/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzAxNzc0MjkxLCJleHAiOjE3MDQzNjYyOTF9.z-RO-QDdkXuEzW4sWHBeS-Qv9S2w53n_hw3IYbtNwtc
+
+
+//creer un jeu payant
+// Token OfficialGame : 5908e35d4d512209028abe2ec4003d6cfd406131f2bccc71c8d7ff4d69b623b0faf8f04e8e7a032114f61138d2619461d454f0bd3f4c97f66aefc6a7a59212c5b6970aa03c44359dc9557a175f221c2f0d30568f66603cf5dad18e47f8692c851e27d99e5b972b501102e844ca6aba081e4e07471d645e1141e46dec14098f90
+
+
+//cREER UN JEU payant
+###
+POST http://localhost:1337/api/official-games
+Content-Type: application/json
+//Authorization: Bearer 5908e35d4d512209028abe2ec4003d6cfd406131f2bccc71c8d7ff4d69b623b0faf8f04e8e7a032114f61138d2619461d454f0bd3f4c97f66aefc6a7a59212c5b6970aa03c44359dc9557a175f221c2f0d30568f66603cf5dad18e47f8692c851e27d99e5b972b501102e844ca6aba081e4e07471d645e1141e46dec14098f90
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzAxNzc0MjkxLCJleHAiOjE3MDQzNjYyOTF9.z-RO-QDdkXuEzW4sWHBeS-Qv9S2w53n_hw3IYbtNwtc
+
+{
+    "data": {
+        "Nom": "Test nom",
+        "Description": "Test description",
+        "Image": "",
+        "Prix": 20
+       
+    }
+}
+
+//Recuperer tous les jeux payant
+###
+//RECUPERER TOUS LES JEUX GRATUITS
+###
+GET http://localhost:1337/API/official-games
+//Authorization: Bearer 5908e35d4d512209028abe2ec4003d6cfd406131f2bccc71c8d7ff4d69b623b0faf8f04e8e7a032114f61138d2619461d454f0bd3f4c97f66aefc6a7a59212c5b6970aa03c44359dc9557a175f221c2f0d30568f66603cf5dad18e47f8692c851e27d99e5b972b501102e844ca6aba081e4e07471d645e1141e46dec14098f90
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzAxNzc0MjkxLCJleHAiOjE3MDQzNjYyOTF9.z-RO-QDdkXuEzW4sWHBeS-Qv9S2w53n_hw3IYbtNwtc
+
+
+//Récupérer un jeu payant
+###
+GET http://localhost:1337/API/official-games/2
+//Authorization: Bearer 5908e35d4d512209028abe2ec4003d6cfd406131f2bccc71c8d7ff4d69b623b0faf8f04e8e7a032114f61138d2619461d454f0bd3f4c97f66aefc6a7a59212c5b6970aa03c44359dc9557a175f221c2f0d30568f66603cf5dad18e47f8692c851e27d99e5b972b501102e844ca6aba081e4e07471d645e1141e46dec14098f90
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzAxNzc0MjkxLCJleHAiOjE3MDQzNjYyOTF9.z-RO-QDdkXuEzW4sWHBeS-Qv9S2w53n_hw3IYbtNwtc
+
+
+//Modifier un jeu payant
+
+###
+PUT http://localhost:1337/API/official-games/2
+Content-Type: application/json
+//Authorization: Bearer 5908e35d4d512209028abe2ec4003d6cfd406131f2bccc71c8d7ff4d69b623b0faf8f04e8e7a032114f61138d2619461d454f0bd3f4c97f66aefc6a7a59212c5b6970aa03c44359dc9557a175f221c2f0d30568f66603cf5dad18e47f8692c851e27d99e5b972b501102e844ca6aba081e4e07471d645e1141e46dec14098f90
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzAxNzc0MjkxLCJleHAiOjE3MDQzNjYyOTF9.z-RO-QDdkXuEzW4sWHBeS-Qv9S2w53n_hw3IYbtNwtc
+
+
+{
+    "data": {
+        "Nom": "Test nom",
+        "Description": "Test description",
+        "Image": "",
+        "Prix": 20
+        
+
+    }
+}
+
+
+//SUPPRIMER UN JEU PAYANT
+###
+DELETE http://localhost:1337/API/official-games/2
+//Authorization: Bearer 5908e35d4d512209028abe2ec4003d6cfd406131f2bccc71c8d7ff4d69b623b0faf8f04e8e7a032114f61138d2619461d454f0bd3f4c97f66aefc6a7a59212c5b6970aa03c44359dc9557a175f221c2f0d30568f66603cf5dad18e47f8692c851e27d99e5b972b501102e844ca6aba081e4e07471d645e1141e46dec14098f90
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzAxNzc0MjkxLCJleHAiOjE3MDQzNjYyOTF9.z-RO-QDdkXuEzW4sWHBeS-Qv9S2w53n_hw3IYbtNwtc
